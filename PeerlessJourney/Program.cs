@@ -56,6 +56,7 @@ while (yN != "yes" && yN != "no") {
         break;
     }
 }
+Console.WriteLine($"> {yN}");
 if (yN == "no") {
     Console.WriteLine("Too bad, lmao.");
     Thread.Sleep(500);
