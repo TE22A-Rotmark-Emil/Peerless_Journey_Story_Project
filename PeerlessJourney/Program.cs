@@ -42,16 +42,16 @@ if (yN == "no") {
         }
         Console.WriteLine($"Are you okay with the name '{inName}'?");
         string? inRawyN = Console.ReadLine();
-        string inYN = inRawyN.ToLower();
-        while (yN != "yes" && yN != "no") {
-            Console.WriteLine($"Invalid Response. Answer must be 'yes' or 'no', not '{yN}'");
-            string? inyN = Console.ReadLine();
-        if (inyN == "yes" || inyN == "no") {
-            inyN = yN;
-            break;
+        string inyN = inRawyN.ToLower();
+        while (inyN != "yes" && inyN != "no") { // this script works perfectly and has no flaws
+            Console.WriteLine($"Invalid Response. Answer must be 'yes' or 'no', not '{inyN}'");
+            inyN = Console.ReadLine();
+            if (inyN == "yes" || inyN == "no") {
+                yN = inyN;
+                break;
             }
-        }
-        if (inYN == "no") {
+            }
+        if (inyN == "no") {
             ExcludeList.Add(inName);    
         }
     }
@@ -62,5 +62,6 @@ else if (yN == "yes") {
     Console.WriteLine("Then we shall begin.");
     Thread.Sleep(2000);
 }
+
 
 Console.WriteLine($"You live in an ancient land called {yN}");
