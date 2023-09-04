@@ -1,4 +1,8 @@
-﻿Random generator = new Random();
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+
+Random generator = new Random();
 int nameRNG = generator.Next(10);
 string[] names = {"Jason", "Jenny", "Frederick", "Freya", "Gregory", "Gabriella", "Kohl", "Kassie", "Miller Freiburg", "Maya"};
 var name = names[nameRNG];
@@ -18,8 +22,37 @@ while (yN != "yes" && yN != "no") {
 }
 Console.WriteLine($"> {yN}");
 if (yN == "no") {
-    Console.WriteLine("Too bad, lmao.");
+    Console.WriteLine("Okay.");
+    List<string> ExcludeList = new List<String>();
+    ExcludeList.Add(name);
     Thread.Sleep(500);
+    while (yN == "no") {
+        int inNameRNG = generator.Next(10);
+        var inName = names[inNameRNG];
+        bool excluded = ExcludeList.Contains(inName);
+        while (excluded == true) {
+            inNameRNG = generator.Next(10);
+            inName = names[inNameRNG];
+            excluded = ExcludeList.Contains(inName);
+            if (excluded == false) {
+                break;
+            }
+        }
+        Console.WriteLine($"Are you okay with the name '{inName}'?");
+        string? inRawyN = Console.ReadLine();
+        string inYN = inRawyN.ToLower();
+        while (yN != "yes" && yN != "no") {
+            Console.WriteLine($"Invalid Response. Answer must be 'yes' or 'no', not '{yN}'");
+            string? inyN = Console.ReadLine();
+        if (inyN == "yes" || inyN == "no") {
+            inyN = yN;
+            break;
+            }
+        }
+        if (inYN == "no") {
+            ExcludeList.Add(inName);    
+        }
+    }
 }
 else if (yN == "yes") {
     Console.WriteLine("Good.");
