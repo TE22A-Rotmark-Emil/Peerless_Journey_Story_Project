@@ -1,47 +1,7 @@
-﻿string? name = null;
-
-Random generator = new Random();
+﻿Random generator = new Random();
 int nameRNG = generator.Next(10);
-if (nameRNG == 0) {
-    string? inName = "Jason";
-    name = inName;
-}
-else if (nameRNG == 1) {
-    string? inName = "Jenny";
-    name = inName;
-}
-else if (nameRNG == 2) {
-    string? inName = "Fredrick";
-    name = inName;
-}
-else if (nameRNG == 3) {
-    string? inName = "Freya";
-    name = inName;
-}
-else if (nameRNG == 4) {
-    string? inName = "Gregory";
-    name = inName;
-}
-else if (nameRNG == 5) {
-    string? inName = "Gabriella";
-    name = inName;
-}
-else if (nameRNG == 6) {
-    string? inName = "Kohl";
-    name = inName;
-}
-else if (nameRNG == 7) {
-    string? inName = "Kassie";
-    name = inName;
-}
-else if (nameRNG == 8) {
-    string? inName = "Miller Freiburg";
-    name = inName;
-}
-else if (nameRNG == 9) {
-    string? inName = "Maya";
-    name = inName;
-}
+string[] names = {"Jason", "Jenny", "Frederick", "Freya", "Gregory", "Gabriella", "Kohl", "Kassie", "Miller Freiburg", "Maya"};
+var name = names[nameRNG];
 
 Console.WriteLine($"Welcome, User.");
 Thread.Sleep(2000);
