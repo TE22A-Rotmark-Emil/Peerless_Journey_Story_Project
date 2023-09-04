@@ -35,7 +35,7 @@ else if (nameRNG == 7) {
     name = inName;
 }
 else if (nameRNG == 8) {
-    string? inName = "Miller";
+    string? inName = "Miller Freiburg";
     name = inName;
 }
 else if (nameRNG == 9) {
@@ -67,3 +67,5 @@ else if (yN == "yes") {
     Console.WriteLine("Then we shall begin.");
     Thread.Sleep(2000);
 }
+
+Console.WriteLine($"You live in an ancient land called {yN}");
