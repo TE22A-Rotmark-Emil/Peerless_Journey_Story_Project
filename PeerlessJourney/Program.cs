@@ -16,7 +16,9 @@ while (yN != "yes" && yN != "no") {
     Console.WriteLine($"Invalid Response. Answer must be 'yes' or 'no', not '{yN}'");
     string? inyN = Console.ReadLine();
     if (inyN == "yes" || inyN == "no") {
-        inyN = yN;
+        yN = inyN;
+        Console.WriteLine(yN);
+        Console.ReadLine();
         break;
     }
 }
