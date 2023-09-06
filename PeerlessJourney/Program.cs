@@ -1,13 +1,17 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿﻿using System.Diagnostics.CodeAnalysis;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using System.IO.Pipes;
 
 Random generator = new Random();
 int nameRNG = generator.Next(10);
 string[] names = {"Jason", "Jenny", "Frederick", "Freya", "Gregory", "Gabriella", "Kohl", "Kassie", "Miller Freiburg", "Maya"};
 var name = names[nameRNG];
+List<string> ExcludeList = new List<String>();
 int pis = names.Count();
-Console.WriteLine(pis);
+int pis2 = ExcludeList.Count();
+int progression = 0;
+int insanity = 0;
 
 Console.WriteLine($"Welcome, User.");
 Thread.Sleep(2000);
@@ -27,16 +31,12 @@ while (yN != "yes" && yN != "no") {
 Console.WriteLine($"> {yN}");
 if (yN == "no") {
     Console.WriteLine("Okay.");
-    List<string> ExcludeList = new List<String>();
     ExcludeList.Add(name);
     Thread.Sleep(500);
-    while (yN == "no") {
+    while (yN == "no" && pis != pis2) {
         int inNameRNG = generator.Next(10);
         var inName = names[inNameRNG];
         bool excluded = ExcludeList.Contains(inName);
-        int inPis = pis;
-        int Pis2 = ExcludeList.Count();
-        string inyN = "worthlessnothing";
         while (excluded == true) {
             inNameRNG = generator.Next(10);
             inName = names[inNameRNG];
@@ -44,17 +44,10 @@ if (yN == "no") {
             if (excluded == false) {
                 break;
             }
-        if (inPis == Pis2) {
-            Console.WriteLine("Hehehehe");
-            Console.ReadLine();
-            break;
         }
-        else if (inPis != Pis2) {
-            Console.WriteLine($"Are you okay with the name '{inName}'?");
-            string? inRawyN = Console.ReadLine();
-            string inInyN = inRawyN.ToLower();
-            inyN = inInyN;
-        }
+        Console.WriteLine($"Are you okay with the name '{inName}'?");
+        string? inRawyN = Console.ReadLine();
+        string inyN = inRawyN.ToLower();
         while (inyN != "yes" && inyN != "no") { // this script works perfectly and has no flaws
             Console.WriteLine($"Invalid Response. Answer must be 'yes' or 'no', not '{inyN}'");
             inyN = Console.ReadLine();
@@ -64,10 +57,30 @@ if (yN == "no") {
             }
             }
         if (inyN == "no") {
-            ExcludeList.Add(inName);    
+            ExcludeList.Add(inName);
+            int inPis2 = ExcludeList.Count();
+            pis2 = inPis2;  
         }
     }
 }
+
+if (pis == pis2) {
+    Console.WriteLine("Wow, you really are insufferable.");
+    Thread.Sleep(2500);
+    Console.WriteLine("I gave you");
+    Thread.Sleep(500);
+    Console.WriteLine("FIF");
+    Thread.Sleep(500);
+    Console.WriteLine("TEEN");
+    Thread.Sleep(500);
+    Console.WriteLine("names, and you didn't pick a single one.");
+    Thread.Sleep(4000);
+    Console.WriteLine("Have fun in your paradise of nameless heathens.");
+    Thread.Sleep(4500);
+    Console.WriteLine("God damn heretic.");
+    Thread.Sleep(1750);
+}
+
 else if (yN == "yes") {
     Console.WriteLine("Good.");
     Thread.Sleep(1000);
@@ -75,5 +88,16 @@ else if (yN == "yes") {
     Thread.Sleep(2000);
 }
 
-
-Console.WriteLine($"You live in an ancient land called {yN}");
+if (pis != pis2) {
+    Console.WriteLine($"You are {name}.");
+    Thread.Sleep(1500);
+    Console.WriteLine($"You live in the wonderful and mystical land of Birmingham (all rights reserved)");
+    Thread.Sleep(3500);
+    Console.WriteLine($"Where will you go?");
+    Thread.Sleep(1000);
+    Console.WriteLine($"1. Nowhere");
+    Console.WriteLine($"2. Towards Jacksonville");
+    Console.WriteLine($"3. Towards Nairobi");
+    Console.WriteLine($"4. Towards Kyiv");
+    Answer1 = 
+}
