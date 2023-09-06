@@ -61,6 +61,10 @@ if (yN == "no") {
             int inPis2 = ExcludeList.Count();
             pis2 = inPis2;  
         }
+        if (inyN == "yes") {
+            yN = inyN;
+            name = inName;
+        }
     }
 }
 
@@ -120,7 +124,70 @@ if (pis != pis2) {
             Console.WriteLine("2. Check on their injuries, decide a course of action from there.");
             Console.WriteLine("3. Move the child. They are in my way.");
             Console.WriteLine("4. Kill the child.");
-            Console.ReadLine();
+            Answer1 = Console.ReadLine();
+            if (Answer1 == "1") {
+                reputation = reputation+50;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"+50 Rep. You now have {reputation} Reputation.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("You tend to the child's wounds, they stare up at you with a confused look on their face.");
+                Thread.Sleep(3500);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine($"'What's wrong?', you ask.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Thread.Sleep(2500);
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("'Nothing. I just didn't expect anyone to help.', they said. 'Who are you?'");
+                Console.ForegroundColor = ConsoleColor.White;
+                Thread.Sleep(4500);
+                if (name == "Miller Freiburg") {
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("'Miller, Miller Freiburg Thompson Carlst Thwernthorp Oculus Tavarnus II.', you command.");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Thread.Sleep(5000);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("'Um... can I just... call you 'Miller Freiburg' for short?', they ask.");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Thread.Sleep(5000);
+                    Console.WriteLine("You stare up for a while, holding your waists as if to prepare for a heroic speech.");
+                    Thread.Sleep(4000);
+                    Console.WriteLine("The child stares back blankly.");
+                    Thread.Sleep(2000);
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("'No.'");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Thread.Sleep(1000);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("'Oh.'");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Thread.Sleep(1000);
+                    Console.WriteLine("...");
+                    Thread.Sleep(5000);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("'Are... you gonna drag me up?', the child requested, still laying dormant on the floor.");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Thread.Sleep(5000);
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("'Okay', you relented. You reach out a hand and drag the child up, meeting their weight with an accidental headbutt.");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Thread.Sleep(6500);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("'Ow...'");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Thread.Sleep(1000);
+                }
+                else {
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine($"'{name}, {name} Smith.', you reach out your hand. 'And you?'");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Thread.Sleep(3000);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("'Charlie', they respond. Their hand reaching out to meet yours.");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Thread.Sleep(3000);
+                    
+                }
+            }
         }
     }
 }
