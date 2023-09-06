@@ -6,6 +6,8 @@ Random generator = new Random();
 int nameRNG = generator.Next(10);
 string[] names = {"Jason", "Jenny", "Frederick", "Freya", "Gregory", "Gabriella", "Kohl", "Kassie", "Miller Freiburg", "Maya"};
 var name = names[nameRNG];
+int pis = names.Count();
+Console.WriteLine(pis);
 
 Console.WriteLine($"Welcome, User.");
 Thread.Sleep(2000);
@@ -32,6 +34,8 @@ if (yN == "no") {
         int inNameRNG = generator.Next(10);
         var inName = names[inNameRNG];
         bool excluded = ExcludeList.Contains(inName);
+        int inPis = pis;
+        int Pis2 = ExcludeList.Count();
         while (excluded == true) {
             inNameRNG = generator.Next(10);
             inName = names[inNameRNG];
@@ -39,6 +43,11 @@ if (yN == "no") {
             if (excluded == false) {
                 break;
             }
+        if (inPis == Pis2) {
+            Console.WriteLine("What the fuck!");
+            Console.ReadLine();
+            break;
+        }
         }
         Console.WriteLine($"Are you okay with the name '{inName}'?");
         string? inRawyN = Console.ReadLine();
