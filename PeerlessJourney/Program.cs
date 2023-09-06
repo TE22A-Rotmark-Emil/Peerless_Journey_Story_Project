@@ -36,6 +36,7 @@ if (yN == "no") {
         bool excluded = ExcludeList.Contains(inName);
         int inPis = pis;
         int Pis2 = ExcludeList.Count();
+        string inyN = "worthlessnothing";
         while (excluded == true) {
             inNameRNG = generator.Next(10);
             inName = names[inNameRNG];
@@ -44,14 +45,16 @@ if (yN == "no") {
                 break;
             }
         if (inPis == Pis2) {
-            Console.WriteLine("What the fuck!");
+            Console.WriteLine("Hehehehe");
             Console.ReadLine();
             break;
         }
+        else if (inPis != Pis2) {
+            Console.WriteLine($"Are you okay with the name '{inName}'?");
+            string? inRawyN = Console.ReadLine();
+            string inInyN = inRawyN.ToLower();
+            inyN = inInyN;
         }
-        Console.WriteLine($"Are you okay with the name '{inName}'?");
-        string? inRawyN = Console.ReadLine();
-        string inyN = inRawyN.ToLower();
         while (inyN != "yes" && inyN != "no") { // this script works perfectly and has no flaws
             Console.WriteLine($"Invalid Response. Answer must be 'yes' or 'no', not '{inyN}'");
             inyN = Console.ReadLine();
