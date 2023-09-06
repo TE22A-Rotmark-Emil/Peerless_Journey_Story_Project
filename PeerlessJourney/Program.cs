@@ -10,7 +10,7 @@ var name = names[nameRNG];
 List<string> ExcludeList = new List<String>();
 int pis = names.Count();
 int pis2 = ExcludeList.Count();
-int progression = 0;
+int reputation = 0;
 int insanity = 0;
 
 Console.WriteLine($"Welcome, User.");
@@ -102,6 +102,10 @@ if (pis != pis2) {
     string Answer1 = Console.ReadLine();
     if (Answer1 == "2" || Answer1 == "3" || Answer1 == "4") {
         if (Answer1 == "2") {
+            reputation = reputation+1;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"+1 Rep. You now have {reputation} Reputation.");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("You start to treck towards Jacksonville.");
             Thread.Sleep(2500);
             Console.WriteLine("...");
@@ -111,8 +115,12 @@ if (pis != pis2) {
             Console.WriteLine("They seem hurt.");
             Thread.Sleep(1500);
             Console.WriteLine("Do you help them?");
-            Thread.Sleep(500);
-            
+            Thread.Sleep(1000);
+            Console.WriteLine("1. Of course! It's a child!");
+            Console.WriteLine("2. Check on their injuries, decide a course of action from there.");
+            Console.WriteLine("3. Move the child. They are in my way.");
+            Console.WriteLine("4. Kill the child.");
+            Console.ReadLine();
         }
     }
 }
