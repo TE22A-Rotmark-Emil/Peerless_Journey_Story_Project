@@ -99,5 +99,20 @@ if (pis != pis2) {
     Console.WriteLine($"2. Towards Jacksonville");
     Console.WriteLine($"3. Towards Nairobi");
     Console.WriteLine($"4. Towards Kyiv");
-    Answer1 = 
+    string Answer1 = Console.ReadLine();
+    if (Answer1 == "2" || Answer1 == "3" || Answer1 == "4") {
+        if (Answer1 == "2") {
+            Console.WriteLine("You start to treck towards Jacksonville.");
+            Thread.Sleep(2500);
+            Console.WriteLine("...");
+            Thread.Sleep(2000);
+            Console.WriteLine("Suddenly, you see a small child on the side of the road.");
+            Thread.Sleep(2500);
+            Console.WriteLine("They seem hurt.");
+            Thread.Sleep(1500);
+            Console.WriteLine("Do you help them?");
+            Thread.Sleep(500);
+            
+        }
+    }
 }
