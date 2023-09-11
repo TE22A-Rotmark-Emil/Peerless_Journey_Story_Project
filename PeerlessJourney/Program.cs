@@ -1,4 +1,4 @@
-﻿﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.IO.Pipes;
@@ -156,17 +156,17 @@ if (pis != pis2) {
                     Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine("'No.'");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Thread.Sleep(1000);
+                    Thread.Sleep(2000);
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("'Oh.'");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Thread.Sleep(1000);
+                    Thread.Sleep(2000);
                     Console.WriteLine("...");
                     Thread.Sleep(5000);
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("'Are... you gonna drag me up?', the child requested, still laying dormant on the floor.");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Thread.Sleep(5000);
+                    Thread.Sleep(6000);
                     Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine("'Okay', you relented. You reach out a hand and drag the child up, meeting their weight with an accidental headbutt.");
                     Console.ForegroundColor = ConsoleColor.White;
@@ -174,7 +174,7 @@ if (pis != pis2) {
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("'Ow...'");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Thread.Sleep(1000);
+                    Thread.Sleep(2000);
                 }
                 else {
                     Console.ForegroundColor = ConsoleColor.Gray;
@@ -185,7 +185,47 @@ if (pis != pis2) {
                     Console.WriteLine("'Charlie', they respond. Their hand reaching out to meet yours.");
                     Console.ForegroundColor = ConsoleColor.White;
                     Thread.Sleep(3000);
-                    
+                    Console.WriteLine("You drag them up from the floor. You and Charlie continue the treck towards Jacksonville.");
+                    Thread.Sleep(4000);
+                    Console.WriteLine("...");
+                    Thread.Sleep(5000);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("'Hey... where are we even going, exactly?', said Charlie");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Thread.Sleep(3000);
+                    Console.WriteLine("You stop abruptly, scratching your head and staring blankly at Charlie.");
+                    Thread.Sleep(4000);
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("Er, well...");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("1 --> 'I'm off to visit family at Jacksonville.'");
+                    Console.WriteLine("2 --> 'I'm trying to get to Jacksonville as soon as possible.'");
+                    Console.WriteLine("3 --> 'That's none of your business.'");
+                    string RawAnswer2 = Console.ReadLine();
+                    string Answer2 = RawAnswer2.ToLower();
+                    if (Answer2 == "one") {
+                        Answer2 = "1";
+                    }
+                    else if (Answer2 == "two") {
+                        Answer2 = "2";
+                    }
+                    else if (Answer2 == "three") {
+                        Answer2 = "3";
+                    }
+                    if (Answer2 == "1" || Answer2 == "2") {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine($"'Jacksonville? {name}, you do know that Jacksonville is across the Atlantic Ocean, right?', said Charlie");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Thread.Sleep(3000);
+                        Console.WriteLine("You stop abruptly, staring blankly.");
+                        Thread.Sleep(4000);
+                        Console.WriteLine("You open your mouth as to speak, but stop before even a husk of noise can escape.");
+                        Thread.Sleep(5000);
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine($"{name}?");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Thread.Sleep(3000);
+                    }
                 }
             }
         }
