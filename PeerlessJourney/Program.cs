@@ -223,11 +223,41 @@ if (pis != pis2) {
                         Thread.Sleep(5000);
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine($"{name}?");
-                        Console.ForegroundColor = ConsoleColor.White;
                         Thread.Sleep(3000);
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.WriteLine("'I have to go. Something really important came up.', you tell Charlie, and immediately start running back.");
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Thread.Sleep(6000);
+                        Console.WriteLine($"'{name}?!', Charlie screams after you.");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("'You do know where Jacksonville (...)'");
+                        Thread.Sleep(2000);
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("The voice blends in with the surrounding noise, becoming naught but a whisper in the sea of voices.");
+                        Thread.Sleep(6000);
+                        reputation = reputation-1;
                     }
                 }
             }
         }
     }
+}
+
+if (reputation == 50) {
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine("You close the door to your humble abode.");
+    Thread.Sleep(2000);
+    Console.WriteLine("Your journey's finally come to an end.");
+    Thread.Sleep(2000);
+    Console.WriteLine("Unluckily, you didn't manage to reach your location.");
+    Thread.Sleep(2000);
+    Console.WriteLine("But, perhaps the true Journey were the friends we made along the way.");
+    Thread.Sleep(2000);
+    Console.WriteLine("Or maybe not.");
+    Thread.Sleep(2000);
+    Console.WriteLine("Maybe you're just stupid.");
+    Thread.Sleep(2000);
+    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.WriteLine("DESTINATION OUT OF REACH ENDING");
+    Console.ReadLine();
 }
