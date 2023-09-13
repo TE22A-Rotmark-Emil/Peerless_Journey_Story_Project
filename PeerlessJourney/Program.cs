@@ -327,9 +327,13 @@ if (pis != pis2) {
                         Console.WriteLine($"They wipe their tears abruptly and clear their throat. 'Um, were you gonna buy anything?'");
                         Thread.Sleep(threadSleepfr*11);
                         Console.ForegroundColor = ConsoleColor.Gray;
-                        Console.WriteLine("I...");
+                        Console.WriteLine("...");
                         Thread.Sleep(threadSleepfr*2);
-                        
+                        Console.WriteLine("1 --> Sure, I don't see why not.");
+                        Console.WriteLine("2 --> I don't have the money.");
+                        Console.WriteLine("3 --> I don't trust that man.");
+                        string RawAnswer3 = Console.ReadLine();
+                        string Answer3 = RawAnswer3.ToLower();
                     }
                 }
             }
