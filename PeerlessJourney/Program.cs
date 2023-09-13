@@ -316,6 +316,7 @@ if (pis != pis2) {
                         Console.Write("Up.");
                         Thread.Sleep(threadSleepfr*2);
                         Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("");
                         Print("You shake your head.");
                         Thread.Sleep(threadSleepfr*2);
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -324,7 +325,7 @@ if (pis != pis2) {
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine($"'{name}! {name}, you're okay! Thank goodness,' Charlie sat hunched up next to you, tears in their eyes. ");
                         Thread.Sleep(threadSleepfr*12);
-                        Console.WriteLine($"They wipe their tears abruptly and clear their throat. 'Um, were you gonna buy anything?'");
+                        Console.WriteLine($"They wipe their tears with their sleeve and clear their throat. 'Um, were you gonna buy anything?'");
                         Thread.Sleep(threadSleepfr*11);
                         Console.ForegroundColor = ConsoleColor.Gray;
                         Console.WriteLine("...");
@@ -334,6 +335,39 @@ if (pis != pis2) {
                         Console.WriteLine("3 --> I don't trust that man.");
                         string RawAnswer3 = Console.ReadLine();
                         string Answer3 = RawAnswer3.ToLower();
+                        if (Answer3 == "one") {
+                            Answer3 = "1";
+                        }
+                        else if (Answer3 == "two") {
+                            Answer3 = "2";
+                        }
+                        else if (Answer3 == "three") {
+                            Answer3 = "3";
+                        }
+                        while (Answer3 != "1" && Answer3 != "2" && Answer3 != "3") {
+                            Console.WriteLine("Invalid answer. Please type 1, 2, or 3.");
+                            string rawInAnswer3 = Console.ReadLine();
+                            string inAnswer3 = rawInAnswer3.ToLower();
+                            if (inAnswer3 == "one") {
+                                inAnswer3 = "1";
+                            }
+                            else if (inAnswer3 == "two") {
+                                inAnswer3 = "2";
+                            }
+                            else if (inAnswer3 == "three") {
+                                inAnswer3 = "3";
+                            }
+                            if (inAnswer3 == "1" || inAnswer3 == "2" || inAnswer3 == "3") {
+                                Answer3 = inAnswer3;
+                                break;
+                            }
+                        }
+                        if (Answer3 == "1") {
+                            reputation+=5;
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"+5 Rep. You now have {reputation} Reputation.");
+                            Thread.Sleep(threadSleepfr*4);
+                        }
                     }
                 }
             }
