@@ -13,6 +13,13 @@ int pis2 = ExcludeList.Count();
 int reputation = 0;
 int insanity = 0;
 int threadSleepfr = 500;
+static void Print(string text, int speed = 35){
+    foreach (char c in text){
+        Console.Write(c);
+        System.Threading.Thread.Sleep(speed);
+    }
+    Console.WriteLine();
+}
 
 Console.WriteLine($"Welcome, User.");
 Thread.Sleep(threadSleepfr * 4);
@@ -135,9 +142,9 @@ if (pis != pis2) {
             Console.WriteLine("4. Kill the child.");
             Answer1 = Console.ReadLine();
             if (Answer1 == "1") {
-                reputation = reputation+50;
+                reputation = reputation+5;
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"+50 Rep. You now have {reputation} Reputation.");
+                Console.WriteLine($"+5 Rep. You now have {reputation} Reputation.");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("You tend to the child's wounds, they stare up at you with a confused look on their face.");
                 Thread.Sleep(threadSleepfr*7);
@@ -214,7 +221,7 @@ if (pis != pis2) {
                     Console.ForegroundColor = ConsoleColor.Gray;
                     Console.WriteLine("Er, well...");
                     Thread.Sleep(threadSleepfr*2);
-                    Console.WriteLine("1 --> 'I'm off to visit family at Jacksonville.'");
+                    Console.WriteLine("1 --> 'I'm off to visit family in Jacksonville.'");
                     Console.WriteLine("2 --> 'I'm trying to get to Jacksonville as soon as possible.'");
                     Console.WriteLine("3 --> 'That's none of your business.'");
                     string RawAnswer2 = Console.ReadLine();
@@ -270,6 +277,59 @@ if (pis != pis2) {
                         Console.WriteLine("The voice blends in with the surrounding noise, becoming naught but a whisper in the sea of voices.");
                         Thread.Sleep(threadSleepfr*12);
                         reputation = reputation-1;
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"-1 Rep. You now have {reputation} Reputation.");
+                        Thread.Sleep(threadSleepfr*4);
+                    }
+                    if (Answer2 == "3") {
+                        reputation = reputation-1;
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"-1 Rep. You now have {reputation} Reputation.");
+                        Thread.Sleep(threadSleepfr*4);
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine("'Oh... okay.', says Charlie.");
+                        Thread.Sleep(threadSleepfr*6);
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("You both continue walking, passing by a small shop by the side of the road.");
+                        Thread.Sleep(threadSleepfr*10);
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("You have 5 gold.");
+                        Thread.Sleep(threadSleepfr*4);
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        insanity++;
+                        Console.WriteLine($"Insanity increased to {insanity}.");
+                        Thread.Sleep(threadSleepfr*2);
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Print("Inside the store lay a disheveled man, he stares blankly, his eyes illuminating with a sickly shade of red.");
+                        Thread.Sleep(threadSleepfr*2);
+                        Print($"'{name}? Oh, it has been too long,' the man smiles unnaturally, his cheeks twisting in a deliberate, uncanny fashion.");
+                        Thread.Sleep(threadSleepfr*2);
+                        Print($"'Don't you recognize me, {name}?'");
+                        Thread.Sleep(threadSleepfr*2);
+                        Print($"'It's me. It's your best friend.");
+                        Thread.Sleep(threadSleepfr*2);
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.Write("Wake ");
+                        Thread.Sleep(threadSleepfr*2);
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                        Console.Write("Up.");
+                        Thread.Sleep(threadSleepfr*2);
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Print("You shake your head.");
+                        Thread.Sleep(threadSleepfr*2);
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("'Is your friend alright?', in front of you lay a disheleved man, staring at Charlie with a patient smile.");
+                        Thread.Sleep(threadSleepfr*12);
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine($"'{name}! {name}, you're okay! Thank goodness,' Charlie sat hunched up next to you, tears in their eyes. ");
+                        Thread.Sleep(threadSleepfr*12);
+                        Console.WriteLine($"They wipe their tears abruptly and clear their throat. 'Um, were you gonna buy anything?'");
+                        Thread.Sleep(threadSleepfr*11);
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.WriteLine("I...");
+                        Thread.Sleep(threadSleepfr*2);
+                        
                     }
                 }
             }
@@ -277,7 +337,7 @@ if (pis != pis2) {
     }
 }
 
-if (reputation == 50 || name == "Miller Freiburg") {
+if (reputation == 5 || name == "Miller Freiburg") {
     Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine("You close the door to your humble abode.");
     Thread.Sleep(threadSleepfr*4);
